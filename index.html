@@ -2,6 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
@@ -11,21 +14,33 @@
 
     <div id="app">
 
-      <select v-model="selected">
-        <option value="">Tutti</option>
-        <option>Rock</option>
-        <option>Pop</option>
-        <option>Jazz</option>
-        <option>Metal</option>
-      </select>
+      <header>
+        <img src="https://i.pinimg.com/originals/93/1a/6d/931a6dd7c814effe6e238bbdf3e0197d.jpg" alt="spotify-logo">
+      </header>
 
-      <div v-for="disc in filterDiscs()">
-        <img :src="disc.poster" alt="disc.title">
-        <h3>{{ disc.title }}</h3>
-        <span>{{ disc.author }}</span>
-        <span>{{ disc.genre }}</span>
-        <span>{{ disc.year }}</span>
-      </div>
+      <main>
+
+        <h1>Album da non perdere</h1>
+
+        <select v-model="selected">
+          <option value="">Tutti</option>
+          <option>Rock</option>
+          <option>Pop</option>
+          <option>Jazz</option>
+          <option>Metal</option>
+        </select>
+
+        <div class="container">
+          <div class="card" v-for="disc in filterDiscs()">
+            <img :src="disc.poster" alt="disc.title">
+            <h2>{{ disc.title }}</h2>
+            <span>{{ disc.author }}</span>
+            <span>{{ disc.genre }}</span>
+            <span>{{ disc.year }}</span>
+          </div>
+        </div>
+        
+      </main>
 
     </div>
 
