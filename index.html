@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+    <title>vue-dischi</title>
+  </head>
+  <body>
+
+    <div id="app">
+
+      <select v-model="selected">
+        <option value="">Tutti</option>
+        <option>Rock</option>
+        <option>Pop</option>
+        <option>Jazz</option>
+        <option>Metal</option>
+      </select>
+
+      <div v-for="disc in filterDiscs()">
+        <img :src="disc.poster" alt="disc.title">
+        <h3>{{ disc.title }}</h3>
+        <span>{{ disc.author }}</span>
+        <span>{{ disc.genre }}</span>
+        <span>{{ disc.year }}</span>
+      </div>
+
+    </div>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
