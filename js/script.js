@@ -37,6 +37,11 @@ var app = new Vue({
     .get("https://flynn.boolean.careers/exercises/api/array/music")
     .then( result => {
       this.discs = result.data.response;
+
+      this.discs.sort( (disc1, disc2) => {
+        return parseInt(disc1.year) - parseInt(disc2.year);
+      });
+
     });
 
   }
