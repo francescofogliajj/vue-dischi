@@ -24,10 +24,7 @@
 
         <select v-model="selected">
           <option value="">Tutti</option>
-          <option>Rock</option>
-          <option>Pop</option>
-          <option>Jazz</option>
-          <option>Metal</option>
+          <option v-for="genre in genres" :value="genre">{{ genre }}</option>
         </select>
 
         <div class="container">
@@ -39,7 +36,7 @@
             <span>{{ disc.year }}</span>
           </div>
         </div>
-        
+
       </main>
 
     </div>
