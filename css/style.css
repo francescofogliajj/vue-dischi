@@ -12,7 +12,7 @@ body {
 
 header {
   height: 80px;
-  background-color: #090909;
+  background-color: black;
   display: flex;
   align-items: center;
 }
